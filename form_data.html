@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Storage</title>
+    <link rel="stylesheet" href="stylez.css" type="text/css">
+</head>
+<body>
+<form onsubmit="my_function(event)">
+    <div class="body">
+            <div>
+                <label>Full Name</label>
+                <input type="text" id="full_name" required/>
+            <div/>
+                <div>
+                    <label>Gender</label>
+                    <input type="radio" name="gender" id="gender" name="gender" required/> Male
+                    <input type="radio" name="gender"/> Female
+                </div>
+                <div>
+                    <label> Date of Birth</label>
+                    <input type="date" id="date_of_birth" required/>
+                </div>
+                <div>
+                    <label>Email Id</label>
+                    <input type="email"  id="email" required/>
+                </div>
+                <input type="submit" value="Submit">
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    function my_function(event)
+    {
+        event.preventDefault();
+        let full_name = document.getElementById("full_name").value;
+        let gender = document.getElementById("gender").value;
+        let date_of_birth = document.getElementById("date_of_birth").value;
+        let email = document.getElementById("email_id").value;
+        let temp_gender;
+        temp_gender.checked ? gender = "Male" : gender = "Female";
+        localStorage.setItem('ls_full_name', full_name);
+        localStorage.setItem('ls_gender', gender);
+        localStorage.setItem('ls_data_of_birth', date_of_birth);
+        localStorage.setItem('ls_email_id', email);
+
+    }
+
+
+</script>
+</body>
+</html>
+
+Styling
+
+/*----styling.css-----*/
+
+.body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
